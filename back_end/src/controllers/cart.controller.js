@@ -1,5 +1,5 @@
 const express = require("express");
-const Cart = require("../models/product.model");
+const Cart = require("../models/cart.model");
 const router = express.Router();
 
 router.get("", async (req, res) => {
