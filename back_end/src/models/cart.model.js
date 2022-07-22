@@ -8,7 +8,7 @@ const cartSchema = new mongoose.Schema(
     price: { type: Number, required: true },
     category: {
       type: String,
-      emun: ["men", "women", "kid"],
+      emun: ["men", "women", "kids"],
     },
   },
   {

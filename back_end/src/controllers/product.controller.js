@@ -1,6 +1,7 @@
 const express = require("express");
 const Product = require("../models/product.model");
 const router = express.Router();
+const authenticate = require("../middlewares/authenticate");
 
 router.get("", async (req, res) => {
   try {
@@ -21,16 +22,17 @@ router.get("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-     try {
-       const item = await Product.findByIdAndDelete(req.params.id).lean().exec();
+  try {
+    const item = await Product.findByIdAndDelete(req.params.id).lean().exec();
 
-       return res.status(200).send(item);
-     } catch (err) {
-       return res.status(500).send({ message: err.message });
-     }
-})
+    return res.status(200).send(item);
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+});
 
-router.post("/", async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
+  req.body.user_id = req.user._id;
   try {
     const product = await Product.create(req.body);
     return res.status(200).send(product);

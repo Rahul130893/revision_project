@@ -8,8 +8,9 @@ const productSchema = new mongoose.Schema(
     price: { type: Number, required: true },
     category: {
       type: String,
-      emun: ["men", "women", "kid"],
+      emun: ["men", "women", "kids"],
     },
+    user_id:{type: mongoose.Schema.Types.ObjectId, ref:"user", required: true }
   },
   {
     versionKey: false,
