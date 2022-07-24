@@ -27,6 +27,9 @@
 .App-link {
   color: #61dafb;
 }
+.card{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 @keyframes App-logo-spin {
   from {
