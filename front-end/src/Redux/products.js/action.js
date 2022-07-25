@@ -25,14 +25,14 @@ export const FetchData = (payload) => {
     dispatch(FetchDataReq);
   
     Axios.get("https://projects13.herokuapp.com/product", {
-      // params: {
-      //   ...payload,
-      // },
+      params: {
+        ...payload,
+      },
     })
 
-      .then((r) => dispatch(FetchDataSucc(r.data)))
+      .then((r) => dispatch(FetchDataSucc(r.data.products)))
 
-      .catch((e) => dispatch(FetchDataFail(e.data)));
+      .catch((e) => dispatch(FetchDataFail(e)));
   };
     
 };

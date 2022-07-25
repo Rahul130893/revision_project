@@ -1,5 +1,5 @@
 //import { Navbar } from "../components/Navbar";
-//import axios from "axios"
+import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect } from "react";
@@ -11,27 +11,26 @@ import { Card } from "../components/Card";
 export const Product = () => {
   const Products = useSelector((store) => store.productData.products);
   const dispatch = useDispatch();
-  // const fetchpro = async () => {
-  //   const response = await axios.get("https://projects13.herokuapp.com/product")
-  //     .catch((err) => {
-  //     console.log("err", err)
-  //     })
-  //   console.log(response.data.products);
-  //   dispatch(response.data.products)
-  // }
- 
- // console.log("inigtial", Products);
+//   const fetchpro = async () => {
+//     const response = await axios.get("https://projects13.herokuapp.com/product")
+//       .catch((err) => {
+//       console.log("err", err)
+//       })
+//     console.log(response.data.products);
+//     dispatch(response.data.products)
+//   }
+//  fetchpro()
+ console.log("inigtial", Products);
   console.log(store.getState());
-//  console.log(Products?.length)
+
   useEffect(() => {
-    if (Products?.length === 0) {
-      
+    if (Products?.length === 0) {   
        dispatch(FetchData())
      }
   },[dispatch, Products?.length]);
  
-   console.log("final", Products);
-  // dispatch(FetchData())
+  //  console.log("final", Products);
+  
    
   return (
     <div>
