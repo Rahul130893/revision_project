@@ -1,59 +1,70 @@
-
-import { Navbar } from "../components/Navbar";
-
-
+//import { Navbar } from "../components/Navbar";
+//import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect } from "react";
 import { FetchData } from "../Redux/products.js/action";
-import {store} from "../Redux/store"
+import { store } from "../Redux/store";
 import { Card } from "../components/Card";
 //import { Link } from "react-router-dom";
 
 export const Product = () => {
-   const products = useSelector((store) => store.productData.products);
-   const dispatch = useDispatch();
+  const Products = useSelector((store) => store.productData.products);
+  const dispatch = useDispatch();
+  // const fetchpro = async () => {
+  //   const response = await axios.get("https://projects13.herokuapp.com/product")
+  //     .catch((err) => {
+  //     console.log("err", err)
+  //     })
+  //   console.log(response.data.products);
+  //   dispatch(response.data.products)
+  // }
  
-   useEffect(() => {
-     if (products?.length === 0) {
-       dispatch(FetchData());
+ // console.log("inigtial", Products);
+  console.log(store.getState());
+//  console.log(Products?.length)
+  useEffect(() => {
+    if (Products?.length === 0) {
+      
+       dispatch(FetchData())
      }
-   }, [dispatch, products?.length]);
-  //  console.log(products.products);
-     console.log(products);
-    // console.log(products.products);
+  },[dispatch, Products?.length]);
+ 
+   console.log("final", Products);
+  // dispatch(FetchData())
+   
   return (
     <div>
-      <Navbar />
+      
 
-      <div
+       <div
         style={{
           width: "85%",
           marginLeft: "200px",
           display: "flex",
           flexWrap: "wrap",
           gap: "30px",
-          
         }}
       >
-        {products.products.map((e) => {
+        {Products.map((e) => {
           return (
-            <div key={e._id}>
-              {/* <Link to={`/products/${e._id}`}> */}
-                <div>
-                  <Card
-                    avatar={e.avatar}
-                    title={e.title}
-                    price={e.price}
-                    rating={e.rating}
-                    category={e.category}
-                  />
-                </div>
-              {/* </Link> */}
-            </div>
+            <div  key={e._id}>
+              {/* <Link to={`/products/${e._id}`}>  */}
+              <div>
+                <Card
+                  avatar={e.avatar}
+                  title={e.title}
+                  price={e.price}
+                  rating={e.rating}
+                  category={e.category}
+                />
+              </div>
+               {/* </Link>  */}
+           </div>
           );
         })}
-      </div>
+      </div> 
+
       <h2>Product page</h2>
     </div>
   );

@@ -47,52 +47,69 @@ const Cart = styled.div`
   /* border: 1px solid black; */
   height: 100%;
 `;
+const Cont = styled.div`
+  width: 100%;
+  height: 90px;
+  border: 1px solid red;
+`;
+const ImageTop = styled.img``;
 export const Navbar = () => {
   return (
-    <Container>
-      <Left>
-        <Link to={"/"} style={{ textDecoration: "none", color: "whitesmoke" }}>
-          <Logo>
-            <LogoTag>MY OWN PROJECT</LogoTag>
-          </Logo>
-        </Link>
-      </Left>
-      <Right>
-        <Link
-          to={"/product"}
-          style={{ textDecoration: "none", color: "whitesmoke" }}
-        >
-          <Menu>Products</Menu>
-        </Link>
+    <div>
+      <Container>
+        <Left>
+          <Link
+            to={""}
+            style={{ textDecoration: "none", color: "whitesmoke" }}
+          >
+            <Logo>
+              <LogoTag>MY OWN PROJECT</LogoTag>
+            </Logo>
+          </Link>
+        </Left>
+        <Right>
+          <Link
+            to={"product"}
+            style={{ textDecoration: "none", color: "whitesmoke" }}
+          >
+            <Menu>Products</Menu>
+          </Link>
 
-        <Link
-          to={"/register"}
-          style={{ textDecoration: "none", color: "whitesmoke" }}
-        >
-          <Menu>Register</Menu>
-        </Link>
-        <Link
-          to={"/signin"}
-          style={{ textDecoration: "none", color: "whitesmoke" }}
-        >
-          <Menu>SignIn</Menu>
-        </Link>
+          <Link
+            to={"register"}
+            style={{ textDecoration: "none", color: "whitesmoke" }}
+          >
+            <Menu>Register</Menu>
+          </Link>
+          <Link
+            to={"signin"}
+            style={{ textDecoration: "none", color: "whitesmoke" }}
+          >
+            <Menu>SignIn</Menu>
+          </Link>
 
-        <Link to={"/cart"}>
-          <Cart>
-            <ShoppingCartOutlinedIcon
-              style={{
-                width: "30px",
-                height: "30px",
-                padding: "15px",
-                textDecoration: "none",
-                color: "whitesmoke",
-              }}
-            />
-            <Count>1</Count>
-          </Cart>
-        </Link>
-      </Right>
-    </Container>
+          <Link to={"cart"}>
+            <Cart>
+              <ShoppingCartOutlinedIcon
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  padding: "15px",
+                  textDecoration: "none",
+                  color: "whitesmoke",
+                }}
+              />
+              <Count>1</Count>
+            </Cart>
+          </Link>
+        </Right>
+      </Container>
+      <Cont>
+        <ImageTop
+          style={{ height: "100%", width: "100%" }}
+          src="https://images.ctfassets.net/5de70he6op10/6jLjT1AyPznRcro3PG6wcj/fb1b201470d651e05c895313ffabdbec/061722_40offSOS_HPG_BBB_LS.jpg?w=1302&q=80&fm=webp"
+        />
+      </Cont>
+    </div>
   );
 };

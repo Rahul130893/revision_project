@@ -11,10 +11,10 @@ export const Card = ({avatar,title, price, rating, category}) => {
           src={avatar}
           alt="img"
         />
-        <p>{title}</p>
-        <h3>{price}</h3>
-        <h3>{rating}</h3>
-        <p>{category}</p>
+        <p>Title:{title}</p>
+        <h3>Price: ₹ {price}</h3>
+        <h3>Rating:{rating}</h3>
+        <p>Type: {category}</p>
       </div>
     );
 }

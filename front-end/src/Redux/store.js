@@ -4,9 +4,10 @@ import thunk from "redux-thunk";
 
 import ProReducer from "./products.js/reducer";
 
-const Reducer = combineReducers({ productData: ProReducer });
+const rootReducer = combineReducers({ productData: ProReducer });
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store = legacy_createStore(
-  Reducer,
+  rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );

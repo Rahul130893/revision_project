@@ -23,15 +23,16 @@ const FetchDataFail = (payload) => {
 export const FetchData = (payload) => {
   return (dispatch) => {
     dispatch(FetchDataReq);
-
+  
     Axios.get("https://projects13.herokuapp.com/product", {
-      params: {
-        ...payload,
-      },
+      // params: {
+      //   ...payload,
+      // },
     })
 
       .then((r) => dispatch(FetchDataSucc(r.data)))
 
       .catch((e) => dispatch(FetchDataFail(e.data)));
   };
+    
 };
