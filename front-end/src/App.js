@@ -7,7 +7,8 @@ import { Cart } from "./pages/Cart"
 import { Product } from "./pages/Product"
 import { Register } from "./pages/Register"
 import { Signin } from "./pages/Signin"
-import {Navbar} from "./components/Navbar"
+import { Navbar } from "./components/Navbar"
+import {SinglePro} from "./pages/SinglePro"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="" element={<Home />} />
 
         <Route path="product" element={<Product />} />
+        <Route path="products/:_id" element={<SinglePro />} />
         <Route path="register" element={<Register />} />
         <Route path="signin" element={<Signin />} />
 

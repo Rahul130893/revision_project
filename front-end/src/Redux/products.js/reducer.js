@@ -31,6 +31,27 @@ const ProReducer = (state = initial, action) => {
         error: payload,
         loading: false,
       };
+    case types.SINGLE_FETCH_DATA_REQ:
+      return {
+        ...state,
+        error: "",
+
+        loading: true,
+      };
+    case types.SINGLE_FETCH_DATA_SUCC:
+      return {
+        ...state,
+        currentProduct: payload,
+        error: "",
+        loading: false,
+      };
+    case types.SINGLE_FETCH_DATA_FAIL:
+      return {
+        ...state,
+
+        error: payload,
+        loading: false,
+      };
     default:
       return state;
   }

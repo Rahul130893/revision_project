@@ -11,7 +11,6 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 2;
 
-  border: 1px solid red;
 `;
 
 const Right = styled.div`
@@ -50,7 +49,7 @@ const Cart = styled.div`
 const Cont = styled.div`
   width: 100%;
   height: 90px;
-  border: 1px solid red;
+  border-bottom: 1px solid gray;
 `;
 const ImageTop = styled.img``;
 export const Navbar = () => {

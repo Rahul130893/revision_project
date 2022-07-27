@@ -1,12 +1,12 @@
 //import { Navbar } from "../components/Navbar";
-import axios from "axios"
+//import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect } from "react";
 import { FetchData } from "../Redux/products.js/action";
 import { store } from "../Redux/store";
 import { Card } from "../components/Card";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Product = () => {
   const Products = useSelector((store) => store.productData.products);
@@ -20,8 +20,8 @@ export const Product = () => {
 //     dispatch(response.data.products)
 //   }
 //  fetchpro()
- console.log("inigtial", Products);
-  console.log(store.getState());
+//console.log("inigtial", Products);
+ // console.log(store.getState());
 
   useEffect(() => {
     if (Products?.length === 0) {   
@@ -34,7 +34,7 @@ export const Product = () => {
    
   return (
     <div>
-      
+      {Products.length===0? <div>....loading</div>:null}
 
        <div
         style={{
@@ -48,7 +48,7 @@ export const Product = () => {
         {Products.map((e) => {
           return (
             <div  key={e._id}>
-              {/* <Link to={`/products/${e._id}`}>  */}
+              <Link to={`/products/${e._id}`} style={{textDecoration:"none"}}> 
               <div>
                 <Card
                   avatar={e.avatar}
@@ -58,7 +58,7 @@ export const Product = () => {
                   category={e.category}
                 />
               </div>
-               {/* </Link>  */}
+               </Link> 
            </div>
           );
         })}
