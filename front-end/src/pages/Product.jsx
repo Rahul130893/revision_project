@@ -1,5 +1,5 @@
 //import { Navbar } from "../components/Navbar";
-//import axios from "axios"
+import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect } from "react";
@@ -12,7 +12,7 @@ export const Product = () => {
   const Products = useSelector((store) => store.productData.products);
   const dispatch = useDispatch();
 //   const fetchpro = async () => {
-//     const response = await axios.get("https://projects13.herokuapp.com/product")
+//     const response = await axios.get("https://projects13.herokuapp.com/cart")
 //       .catch((err) => {
 //       console.log("err", err)
 //       })

@@ -52,6 +52,26 @@ const ProReducer = (state = initial, action) => {
         error: payload,
         loading: false,
       };
+    case types.FETCH_CART_REQ:
+      return {
+        ...state,
+        error: "",
+
+        loading: true,
+      };
+    case types.FETCH_CART_SUCC:
+      return {
+        ...state,
+        cart: [...payload],
+        error: "",
+        loading: false,
+      };
+    case types.FETCH_CART_FAIL:
+      return {
+        ...state,
+        error: payload,
+        loading: false,
+      };
     default:
       return state;
   }

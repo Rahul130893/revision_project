@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
+import { Counter } from "./Counter";
+
 const Container = styled.div`
   display: flex;
 
@@ -10,7 +12,6 @@ const Container = styled.div`
 `;
 const Left = styled.div`
   flex: 2;
-
 `;
 
 const Right = styled.div`
@@ -36,7 +37,7 @@ const Logo = styled.div`
 const LogoTag = styled.h1``;
 
 const Menu = styled.h3``;
-const Count = styled.p`
+const Count = styled.div`
   color: yellow;
   font-weight: 500;
   margin-top: -70px;
@@ -53,14 +54,18 @@ const Cont = styled.div`
 `;
 const ImageTop = styled.img``;
 export const Navbar = () => {
+
+
+
+
+
+
+
   return (
     <div>
       <Container>
         <Left>
-          <Link
-            to={""}
-            style={{ textDecoration: "none", color: "whitesmoke" }}
-          >
+          <Link to={""} style={{ textDecoration: "none", color: "whitesmoke" }}>
             <Logo>
               <LogoTag>MY OWN PROJECT</LogoTag>
             </Logo>
@@ -98,7 +103,10 @@ export const Navbar = () => {
                   color: "whitesmoke",
                 }}
               />
-              <Count>1</Count>
+              <Count>
+                <Counter />
+                {Cart.length}
+              </Count>
             </Cart>
           </Link>
         </Right>

@@ -3,22 +3,22 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import {  Single_FetchData } from "../Redux/products.js/action";
 import { AddProCart } from "../Redux/products.js/action";
-import { SingleCard } from "../components/SingleCart";
+import { SingleCard } from "../components/SingleCard";
 
 export const SinglePro = () => {
  
   const currentProduct = useSelector((store) => store.productData.currentProduct);
   const { _id } = useParams();
 
-  console.log(_id);
+  //console.log(_id);
   const dispatch = useDispatch();
-  console.log("initial",currentProduct)
+  //console.log("initial",currentProduct)
   useEffect(() => {
     if (_id) {
       dispatch(Single_FetchData(_id));
-    }
+    } 
   }, [dispatch, _id]);
-  console.log("final",currentProduct);
+  //console.log("final",currentProduct);
 
   const addHandler = () => {
     alert("product added");

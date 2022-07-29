@@ -94,3 +94,38 @@ const Add_Pro_Fail = (payload) => {
     .catch((e) => dispatch(Add_Pro_Fail(e.data)));
 };
 
+
+
+
+
+const Fetch_Cart_Req = (payload) => {
+  return {
+    type: types.FETCH_CART_REQ,
+    payload,
+  };
+};
+const Fetch_Cart_Succ = (payload) => {
+  return {
+    type: types.FETCH_CART_SUCC,
+    payload,
+  };
+};
+const Fetch_Cart_Fail = (payload) => {
+  return {
+    type: types.FETCH_CART_FAIL,
+    payload,
+  };
+};
+
+
+export const fetchCart = (payload) => (dispatch) => {
+  dispatch(Fetch_Cart_Req);
+  Axios.get("https://projects13.herokuapp.com/cart", {
+    params: {
+      ...payload,
+    },
+  })
+    .then((r) => dispatch(Fetch_Cart_Succ(r.data.cartItems)))
+
+    .catch((e) => dispatch(Fetch_Cart_Fail(e)));
+};
