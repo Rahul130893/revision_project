@@ -16,3 +16,8 @@ export const ADD_PRO_CART_FAIL = "ADD_PRO_CART_FAIL";
 export const FETCH_CART_REQ = "FETCH_CART_REQ";
 export const FETCH_CART_SUCC = "FETCH_CART_SUCC";
 export const FETCH_CART_FAIL = "FETCH_CART_FAIL";
+
+
+export const DELET_CART_REQ = "DELET_CART_REQ";
+export const DELET_CART_SUCC = "DELET_CART_SUCC";
+export const DELET_CART_FAIL = "DELET_CART_FAIL";

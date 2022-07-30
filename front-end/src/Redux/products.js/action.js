@@ -91,7 +91,7 @@ const Add_Pro_Fail = (payload) => {
   dispatch(Add_Pro_Req());
   Axios.post("https://projects13.herokuapp.com/cart", product)
     .then((r) => dispatch(Add_Pro_Succ(r.data)))
-    .catch((e) => dispatch(Add_Pro_Fail(e.data)));
+    .catch((e) => dispatch(Add_Pro_Fail(e.message)));
 };
 
 
@@ -128,4 +128,25 @@ export const fetchCart = (payload) => (dispatch) => {
     .then((r) => dispatch(Fetch_Cart_Succ(r.data.cartItems)))
 
     .catch((e) => dispatch(Fetch_Cart_Fail(e)));
+};
+
+
+const delet_Cart_Req = (payload) => {
+  return {
+    type: types.DELET_CART_REQ,
+    payload,
+
+  }
+}
+const delet_Cart_Succ = (payload) => {
+  return {
+    type: types.DELET_CART_SUCC,
+    payload,
+  };
+};
+const delet_Cart_Fail = (payload) => {
+  return {
+    type: types.DELET_CART_FAIL,
+    payload,
+  };
 };

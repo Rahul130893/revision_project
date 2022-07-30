@@ -19,7 +19,7 @@ export const Counter = () => {
   //    fetchpro()
    const Cart = useSelector((store) => store.productData.cart);
    const dispatch = useDispatch();
-   console.log(Cart.length);
+   //console.log(Cart.length);
 
    useEffect(() => {
      if (Cart?.length === 0) {

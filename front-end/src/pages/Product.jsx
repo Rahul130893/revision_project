@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useEffect } from "react";
 import { FetchData } from "../Redux/products.js/action";
-import { store } from "../Redux/store";
+
 import { Card } from "../components/Card";
 import { Link } from "react-router-dom";
 
