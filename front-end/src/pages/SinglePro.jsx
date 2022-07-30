@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { Single_FetchData } from "../Redux/products.js/action";
-import { AddProCart } from "../Redux/products.js/action";
+import { Single_FetchData } from "../Redux/products/action";
+import { AddProCart } from "../Redux/products/action";
 import { SingleCard } from "../components/SingleCard";
-import { fetchCart } from "../Redux/products.js/action";
+import { fetchCart } from "../Redux/products/action";
 import Axios from "axios";
 import { store } from "../Redux/store";
 import { useState } from "react";

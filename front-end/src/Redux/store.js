@@ -2,7 +2,7 @@ import { legacy_createStore, combineReducers } from "redux";
 import { applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
-import ProReducer from "./products.js/reducer";
+import ProReducer from "./products/reducer";
 
 const rootReducer = combineReducers({ productData: ProReducer });
 
