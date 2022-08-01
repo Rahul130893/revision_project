@@ -1,4 +1,4 @@
-import { fetchCart } from "../Redux/products.js/action";
+import { fetchCart } from "../Redux/products/action";
 
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import { useEffect } from "react";

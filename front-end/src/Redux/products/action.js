@@ -21,12 +21,13 @@ const FetchDataFail = (payload) => {
 };
 
 export const FetchData = (payload) => {
-  return (dispatch) => {
+  return (dispatch, token) => {
     dispatch(FetchDataReq);
   
     Axios.get("https://projects13.herokuapp.com/product", {
       params: {
         ...payload,
+        token
       },
     })
 

@@ -3,6 +3,7 @@ import { applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import ProReducer from "./products/reducer";
+//import { authReducer } from "./auth/reducer";
 
 const rootReducer = combineReducers({ productData: ProReducer });
 

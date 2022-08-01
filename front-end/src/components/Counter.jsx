@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { fetchCart } from "../Redux/products.js/action";
+import { fetchCart } from "../Redux/products/action";
 //import { store } from "../Redux/store"
 import axios from "axios";
 export const Counter = () => {
