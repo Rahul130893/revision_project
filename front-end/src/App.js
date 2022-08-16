@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { Cart } from "./pages/Cart"
-import { Product } from "./pages/Product"
-import { Register } from "./pages/Register"
-import { Signin } from "./pages/Signin"
-import { Navbar } from "./components/Navbar"
-import {SinglePro} from "./pages/SinglePro"
+import { Cart } from "./pages/Cart";
+import { Product } from "./pages/Product";
+import { Register } from "./pages/Register";
+import { Signin } from "./pages/Signin";
+import { Navbar } from "./components/Navbar";
+import { SinglePro } from "./pages/SinglePro";
+import { AuthWrapper } from "./components/AuthWrapper";
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="signin" element={<Signin />} />
 
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <AuthWrapper>
+              <Cart />
+            </AuthWrapper>
+          }
+        />
       </Routes>
     </div>
   );

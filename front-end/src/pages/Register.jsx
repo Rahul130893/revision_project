@@ -56,15 +56,19 @@ export const Register = () => {
       <form onSubmit={handlesubmit}>
         <input
           onChange={handleChange}
-          type="text"
+          type="email"
           name="email"
-          placeholder="Enter name"
+          placeholder="Enter Email"
+          required
+          
         />
         <input
           onChange={handleChange}
           type="text"
           name="password"
-          placeholder="Enter Email"
+          placeholder="Enter password"
+          required
+          
         />
         <input type={"submit"} value="submit" />
       </form>
