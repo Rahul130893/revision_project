@@ -6,13 +6,20 @@ import { store } from "../Redux/store"
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 
 export const Signin = () => {
 
   const token= useSelector((store)=> store.authReducer.token)
+  const error = useSelector((store) => store.authReducer.error);
+  const AuthStatus= useSelector((store)=> store.authReducer.auth)
+ 
   const dispatch = useDispatch()
-  let navigate= useNavigate()
+  let navigate = useNavigate()
+  const location = useLocation()
+  
+  
   
 
   const [userEmail, setUserEmail]= useState("")
@@ -29,20 +36,24 @@ export const Signin = () => {
 
   const submitHandle = (e) => {
     e.preventDefault() 
-    
-    dispatch(signIn({ email: userEmail, password: userPass }))
    
-   if (token) {
-     alert("SignIn successfull");
-    }
-    
+   dispatch(signIn({ email: userEmail, password: userPass }))
+   
   }
+ 
+  useEffect(() => {
+    if (location?.state && AuthStatus) {
+      alert("signIn successfull")
+      navigate(location.state, {replace: true})
+    }
+  },[location?.state, navigate, AuthStatus])
   
 
 
   return (
     <div>
       <h2>SignIn page</h2>
+      
       <form onSubmit={submitHandle}>
         <input
           onChange={handleChangeEmail}

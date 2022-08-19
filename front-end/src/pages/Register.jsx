@@ -8,7 +8,7 @@ export const Register = () => {
     email: "",
     password: "",
   });
-  const [istoken, setIstoken]=useState(false)
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,12 +32,15 @@ export const Register = () => {
       });
 
       let data = await res.json();
+      console.log(data.token)
       if (data.token) {
-        navigate("/signin")
+        
+        navigate("/signin", {replace:true})
       } else {
         alert("fill correctly")
       }
-     setIstoken(true)
+      
+      
     } catch (error) {
       console.log(error);
 

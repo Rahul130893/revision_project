@@ -5,14 +5,8 @@ export const AuthWrapper = ({ children }) => {
     
 const AuthStatus= useSelector((store)=> store.authReducer.auth)
     console.log(AuthStatus)
-    if (!AuthStatus) {
-        alert("login first")
-        return <Navigate to="/signin" replace = {true} />
+    if (AuthStatus) {
+        return children
     }
-    return (
-        <div>
-            {children}
-
-        </div>
-    )
+    return <Navigate to="/signin" state="/cart" replace={true}  />
 }
